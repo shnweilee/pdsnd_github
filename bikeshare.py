@@ -1,3 +1,4 @@
+# Import modules
 import time
 import pandas as pd
 import numpy as np
@@ -19,7 +20,7 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     
-    # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # To get user input for city (chicago, new york city, washington).
     while True:
         city =  input('Would you like to see data for Chicago, New York City, or Washington?').lower()
         
@@ -28,10 +29,10 @@ def get_filters():
         else:
             print('\nInvalid input, please try again.\n')
     
-    # TO DO: get user input for month (all, january, february, ... , june)
+    # To get user input for month (all, january, february, ... , june)
     month = input('Which month? January, February, March, April, May, June. Otherwise enter ALL').lower()
     
-    # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
+    # To get user input for day of week (all, monday, tuesday, ... sunday)
     day = input('Which day? Monday, Tuesday, Wednesday...Sunday. Otherwise enter ALL').lower()
 
     print('-'*40)
@@ -150,14 +151,15 @@ def user_stats(df):
     # TO DO: Display counts of user types
     print('Counts of User Types: ', df['User Type'].value_counts())
 
-    # NOTE: Washington data does not have Gender and Birth Year
-    # TO DO: Display counts of gender
+    # p.s. Washington data does not have Gender and Birth Year
+    # Display counts of gender
     try:
         print('Counts of Gender: ', df['Gender'].value_counts())
+    # response for Washington data
     except:
         print('Gender is unavailable in this data.')
                                      
-    # TO DO: Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth
     try:
         earliest_year = df['Birth Year'].min()
         print('Earliest Year of Birth: ', earliest_year)
@@ -167,7 +169,7 @@ def user_stats(df):
 
         most_common_year = df['Birth Year'].mode()[0]
         print('Most Common Year of Birth: ', most_common_year)
-
+    # response for Washington data
     except:
         print('Birth Year is unavaiable in this data.')
         
@@ -175,7 +177,7 @@ def user_stats(df):
     print('-'*40)
 
     
-# Option for user to view raw data
+# Option for user to view raw data (5 rows at a time)
 def show_raw_data(df):
     row = 0
     while True:
@@ -201,6 +203,7 @@ def main():
         user_stats(df)
         show_raw_data(df)
 
+        # Provide users with option to restart
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
