@@ -14,4 +14,6 @@ Include the files used
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+[Programming for Data Science with Python Nanodegree Program with Udacity](https://www.udacity.com/)
+[Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
 
